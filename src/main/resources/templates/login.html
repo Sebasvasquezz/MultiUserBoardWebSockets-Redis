@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Spring Security Example </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f8ff; /* AliceBlue */
+                color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .login-container {
+                background-color: #e6f2ff; /* LightBlue */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                width: 100%;
+            }
+            h1 {
+                text-align: center;
+                color: #003366; /* DarkBlue */
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                margin-bottom: 5px;
+                color: #003366; /* DarkBlue */
+            }
+            input[type="text"], input[type="password"] {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #99ccff; /* LightBlue */
+                border-radius: 5px;
+            }
+            input[type="submit"] {
+                padding: 10px;
+                background-color: #003366; /* DarkBlue */
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #0059b3; /* MediumBlue */
+            }
+            .message {
+                text-align: center;
+                margin-bottom: 15px;
+                color: #ff6666; /* Red */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login</h1>
+            <div th:if="${param.error}" class="message">
+                Invalid username and password.
+            </div>
+            <div th:if="${param.logout}" class="message">
+                You have been logged out.
+            </div>
+            <form th:action="@{/login}" method="post">
+                <div>
+                    <label>User Name:</label>
+                    <input type="text" name="username"/>
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="password"/>
+                </div>
+                <div>
+                    <input type="submit" value="Sign In"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
