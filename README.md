@@ -82,7 +82,7 @@ Once you have the cloned project in your repository. Follow the steps below to l
 ![Execution](images/image-1.png)
 
 7. You can also open a browser and go to the following [link](https://ec2-174-129-46-215.compute-1.amazonaws.com:8443/) to access the project on AWS:
-![Execution in AWS](images/image-2.png)
+![Execution in AWS](images/aws.png) 
 
 ## Project Structure
 
