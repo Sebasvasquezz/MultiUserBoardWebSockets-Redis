@@ -17,8 +17,6 @@ import jakarta.websocket.server.ServerEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.repositories.TicketRepository;
-
 /**
  * WebSocket endpoint for handling drawing actions via WebSocket protocol.
  * This component manages WebSocket sessions, message processing, and error
@@ -112,6 +110,14 @@ public class BBEndpoint {
         queue.remove(session);
         // Remove ticket from map if exists
         ticketSessionMap.values().removeIf(s -> s.getId().equals(session.getId()));
+    }
+
+    public boolean isAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
     }
 
 }

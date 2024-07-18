@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.repositories.TicketRepository;
-
 /**
  * REST controller class for handling drawing service status requests.
  */
@@ -20,13 +18,6 @@ public class DrawingServiceController {
     *
     * @return A JSON string containing the current server status.
     */
-   @RequestMapping(value = "/status", method = RequestMethod.GET, produces = "application/json")
-   public String status() {
-      return "{\"status\":\"Greetings from Spring Boot. "
-            + java.time.LocalDate.now() + ", "
-            + java.time.LocalTime.now()
-            + ". " + "The server is Runnig!\"}";
-   }
 
    @GetMapping("/getticket")
    public String getTicket() {

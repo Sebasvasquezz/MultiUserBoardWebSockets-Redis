@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -14,13 +14,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TicketRepository {
-    @Autowired
-    private StringRedisTemplate template;
+    @Autowired StringRedisTemplate template;
+
+
     // inject the template as ListOperations
-    @Resource(name = "stringRedisTemplate")
-    private ListOperations<String, String> listTickets;
+    @Resource(name = "stringRedisTemplate") ListOperations<String, String> listTickets;
     private int ticketnumber;
 
+    public void setListTickets(ListOperations<String, String> listTickets) {
+        this.listTickets = listTickets;
+    }
     public TicketRepository() {
     }
 
