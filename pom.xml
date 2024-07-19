@@ -107,6 +107,15 @@
                             <goal>report</goal>
                         </goals>
 						<configuration>
+						<excludes>
+							<exclude>**/RedisConfig.class</exclude>
+							<exclude>**/BBApplicationContextAware.class</exclude>
+							<exclude>**/BBAppStarter.class</exclude>
+							<exclude>**/BBConfigurator.class</exclude>
+							<exclude>**/BBEndpoint.class</exclude>
+							<exclude>**/MvcConfig.class</exclude>
+							<exclude>**/WebSecurityConfig.class</exclude>
+						</excludes>
                         </configuration>
                     </execution>
 					
@@ -120,7 +129,7 @@
                                 <rule>
                                     <element>PACKAGE</element>
 									<excludes>
-										<exclude>**/configurator/**</exclude>
+										<exclude>**/RedisConfig.class</exclude>
 										<exclude>**/BBApplicationContextAware.class</exclude>
 										<exclude>**/BBAppStarter.class</exclude>
 										<exclude>**/BBConfigurator.class</exclude>
@@ -132,7 +141,7 @@
                                         <limit>
                                             <counter>CLASS</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.10</minimum>
+                                            <minimum>0.85</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
